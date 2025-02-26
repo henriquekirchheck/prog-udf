@@ -1,3 +1,5 @@
+from typing import cast
+from dacite.data import Data
 import requests
 from dataclasses import dataclass
 from dacite import from_dict
@@ -45,7 +47,7 @@ class EpisodeData:
 
 def main():
     r = requests.get("https://rickandmortyapi.com/api/character/214")
-    character = from_dict(CharacterData, r.json())
+    character = from_dict(CharacterData, cast(Data, r.json()))
     print(f"Nome: {character.name}")
     print(f"Status: {character.status}")
     print(f"Genero: {character.gender}")
