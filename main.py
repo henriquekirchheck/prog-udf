@@ -1,3 +1,5 @@
+#!python
+
 from typing import cast
 from dacite.data import Data
 import requests
