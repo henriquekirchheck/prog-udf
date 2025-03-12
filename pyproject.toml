@@ -17,3 +17,8 @@ line-length = 100
 quote-style = "double"
 indent-style = "space"
 docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "C901"]
+fixable = ["ALL"]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
