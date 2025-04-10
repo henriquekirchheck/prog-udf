@@ -6,7 +6,7 @@ fi
 CURRENT_DATE="$(date +%F)"
 CURRENT_DATE_FOLDER="./$CURRENT_DATE"
 
-printf -v INPUT "%02d" $1
+printf -v INPUT "%02d" "$1"
 
 TASK_FILE="$CURRENT_DATE_FOLDER/task-$INPUT.py"
 
@@ -15,5 +15,5 @@ if [[ -f $TASK_FILE ]]; then
     exit
 fi
 
-mkdir $CURRENT_DATE_FOLDER -p
-echo -e "#!python\n" > $TASK_FILE
+mkdir "$CURRENT_DATE_FOLDER" -p
+echo -e "#!python\n" > "$TASK_FILE"
